@@ -1,0 +1,37 @@
+= Development
+
+== Setting up highlight.js
+
+Building and testing involves using the highlight.js repo itself.
+To set up the repo:
+
+[source,bash]
+----
+make setup
+----
+
+This will clone down the highlight.js repo within the `build/` directory,
+and set up a symlink from within its `extra/` directory.
+
+== Testing the grammar
+
+Testing is a manual process that involves using highlight.js's tooling to open a preview browser
+with syntax highlighting.
+
+[source,shell]
+----
+cd build/highlight.js
+node tools/build.js -t browser -n pkl
+python3 -m http.server -d .
+----
+
+Then open your browser to http://localhost:8000/tools/developer.html to debug highlighting.
+
+== Building `dist`
+
+To build the assets in `dist`:
+
+[source,shell]
+----
+make build
+----

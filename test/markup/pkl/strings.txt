@@ -1,0 +1,19 @@
+// Single-line strings
+greeting = "Hello, World!"
+name = "Alice"
+
+// Multi-line strings
+message = """
+  This is a
+  multi-line string
+  """
+
+// String interpolation
+age = 30
+info = "Name: \(name), Age: \(age)"
+
+// Nested interpolation
+nested = """
+  Result: \(if (age > 18) "Adult" else "Minor")
+  Complex: \(new { x = 1; y = 2 }.x + new { x = 3 }.x)
+  """

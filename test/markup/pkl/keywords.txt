@@ -1,0 +1,70 @@
+// Module declaration
+module example.Test
+
+// Imports
+import "other.pkl"
+import* "all.pkl" as Everything
+
+// Class with modifiers
+abstract class Base {
+  abstract name: String
+}
+
+open class Derived extends Base {
+  local helper = 42
+  hidden secret: String = "classified"
+  fixed constant = 100
+  const PI = 3.14159
+  external externalValue: Int
+
+  name = "derived"
+}
+
+// Control flow
+result = if (true) "yes" else "no"
+
+// Expressions
+value = let (x = 10) x * 2
+
+// Object creation
+obj = new {
+  prop1 = 1
+  prop2 = 2
+}
+
+// Read expressions
+data = read("file.json")
+optional = read?("maybe.json")
+glob = read*("*.txt")
+
+// this, outer, super
+current = this
+parent = outer
+base = super.toString()
+
+// throw and trace
+error = throw("Something went wrong")
+debug = trace(42)
+
+// Literals
+truthy = true
+falsy = false
+nothing = null
+none = nothing
+unknown_val = unknown
+
+// For loop
+numbers = for (i in List(1, 5)) {
+  i * 2
+}
+
+// When expression
+status = when {
+  (age < 13) -> "child"
+  (age < 20) -> "teenager"
+  else -> "adult"
+}
+
+// Typealias
+typealias UserId = String
+typealias Config = Map<String, Any>

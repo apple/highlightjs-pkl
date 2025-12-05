@@ -1,0 +1,24 @@
+/// A module for configuration
+module example.Config
+
+/// A person's name
+name: String = "Alice"
+
+/// A person's age
+age: Int = 30
+
+/// Is the person active?
+active: Boolean = true
+
+/// Configuration values
+config {
+  host = "localhost"
+  port = 8080
+  enabled = true
+}
+
+class MyPerson {
+  function sayHi(name: String) = "Hi, \(name)"
+}
+
+typealias NonEmptyMapping = Mapping<String, String>(!isEmpty)

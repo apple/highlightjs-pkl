@@ -1,0 +1,16 @@
+headerPath = "scripts/license-header.txt"
+
+includes = [
+    "*.js",
+    "*.pkl",
+    "PklProject",
+]
+
+excludes = [
+    "build/",
+    "node_modules/"
+]
+
+[git]
+attrs = 'enable'
+ignore = 'enable'

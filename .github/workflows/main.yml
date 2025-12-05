@@ -1,0 +1,56 @@
+# Generated from Workflow.pkl. DO NOT EDIT.
+name: Build (main)
+'on':
+  push:
+    branches:
+    - main
+    tags-ignore:
+    - '**'
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+permissions:
+  contents: read
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+      with:
+        persist-credentials: false
+    - uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6
+      with:
+        node-version: '24'
+        registry-url: https://registry.npmjs.org
+    - run: npm ci
+    - run: make lint-js
+    - name: Setup hawkeye
+      run: |-
+        DIR="$(mktemp -d /tmp/hawkeye-XXXXXX)"
+        curl -L -o hawkeye.tar.gz "https://github.com/korandoru/hawkeye/releases/download/v6.3.0/hawkeye-x86_64-unknown-linux-gnu.tar.xz"
+        tar -xvf hawkeye.tar.gz -C "$DIR"
+        echo "$DIR/hawkeye-x86_64-unknown-linux-gnu/" >> "$GITHUB_PATH"
+        echo "$DIR" >> "$GITHUB_PATH"
+    - run: make build
+    - run: git diff --name-only --exit-code || echo "Some files were incorrectly formatted!"
+  test-pkl-formatting:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+      with:
+        persist-credentials: false
+    - name: Setup Pkl
+      id: setup-pkl
+      env:
+        PKL_VERSION: 0.30.1
+        PKL_FILENAME: pkl
+        PKL_DOWNLOAD_URL: https://github.com/apple/pkl/releases/download/0.30.1/pkl-linux-amd64
+      shell: bash
+      run: |-
+        DIR="$(mktemp -d /tmp/pkl-$PKL_VERSION-XXXXXX)"
+        PKL_EXEC="$DIR/$PKL_FILENAME"
+        curl -sfL -o $PKL_EXEC "$PKL_DOWNLOAD_URL"
+        chmod +x $PKL_EXEC
+        echo "$DIR" >> "$GITHUB_PATH"
+        echo "pkl_exec=$PKL_EXEC" >> "$GITHUB_OUTPUT"
+    - run: pkl format --diff-name-only .

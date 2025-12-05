@@ -1,0 +1,15 @@
+// Decimal numbers
+decimal = 42
+float = 3.14
+exponent = 1.5e10
+negative = -273.15
+
+// Binary numbers
+binary = 0b101010
+
+// Octal numbers
+octal = 0o52
+
+// Hexadecimal numbers
+hex = 0x2A
+hexUpper = 0xFF

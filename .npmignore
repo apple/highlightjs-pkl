@@ -1,0 +1,6 @@
+.github/
+.pkl-lsp/
+node_modules/
+.idea/
+scripts/
+build/

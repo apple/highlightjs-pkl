@@ -1,0 +1,20 @@
+// Line comment
+/* Block comment */
+
+abstract class Person {
+  name: String
+  age: Int
+}
+
+open class Employee extends Person {
+  function greet() = "Hello, \(name)!"
+
+  salary: Int = 50000
+}
+
+class Manager extends Employee {
+  hidden teamSize: Int = 5
+
+  function getInfo(): String =
+    "Manager: \(name), Team: \(teamSize)"
+}

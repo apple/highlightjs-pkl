@@ -15,9 +15,9 @@
     "syntax"
   ],
   "files": [
-    "dist/pkl.es.min.js",
-    "dist/pkl.min.js",
-    "src/languages/pkl.js"
+    "dist/**",
+    "src/**",
+    "types/**"
   ],
   "author": "The Pkl Team <pkl-oss@group.apple.com>",
   "license": "Apache-2.0",

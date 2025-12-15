@@ -1,5 +1,7 @@
 = highlightjs-pkl
 
+image:https://img.shields.io/npm/v/@apple/highlightjs-pkl[NPM Version]
+
 This repository hosts a Highlight.js library for https://pkl-lang.org[the Pkl programming language].
 
 == Usage

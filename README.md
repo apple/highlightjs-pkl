@@ -1,52 +1,49 @@
-= highlightjs-pkl
+# highlightjs-pkl
 
-image:https://img.shields.io/npm/v/@apple/highlightjs-pkl[NPM Version]
+![NPM Version](https://img.shields.io/npm/v/@apple/highlightjs-pkl)
 
-This repository hosts a Highlight.js library for https://pkl-lang.org[the Pkl programming language].
+This repository hosts a Highlight.js library for [the Pkl programming language](https://pkl-lang.org).
 
-== Usage
+## Usage
 
-=== Simple Usage
+### Simple Usage
 
 Simply include the Highlight.js library as an asset in your HTML:
 
-[source,html]
-----
+```html
 <script type="text/javascript" src="/path/to/highlightjs.min.js" />
 <script type="text/javascript" src="/path/to/highlightjs-pkl/dist/pkl.min.js" />
 <script type="text/javascript">
   hljs.highlightAll();
 </script>
-----
+```
 
-=== Node.js
+### Node.js
 
 To use from Node.js, or when bundled with Webpack (or another packer):
 
-[source,bash]
-----
+```bash
 npm install @apple/highlightjs-pkl
-----
+```
 
 And import as an ES6 module:
 
-[source,javascript]
-----
+```javascript
 import hljs from "highlight.js";
 import pkl from "@apple/highlightjs-pkl";
 
 hljs.registerLanguage("pkl", pkl);
-----
+```
 
-=== Alternative usage patterns.
+### Alternative usage patterns.
 
 There's a lot more ways to use highlight.js.
-For more information, see their https://github.com/highlightjs/highlight.js/blob/main/README.md[README].
+For more information, see their [README](https://github.com/highlightjs/highlight.js/blob/main/README.md).
 
-== License
+## License
 
 highlightjs-pkl is released under the Apache 2.0 License.
-See link:LICENSE.txt[LICENSE] file for details.
+See [LICENSE](LICENSE.txt) file for details.
 
 Highlight.js is released under the BSD 3-Clause License.
-See https://github.com/highlightjs/highlight.js/blob/main/LICENSE[LICENSE] file for details.
+See [LICENSE](https://github.com/highlightjs/highlight.js/blob/main/LICENSE) file for details.

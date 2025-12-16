@@ -100,6 +100,7 @@ export default function (hljs) {
   };
 
   const IDENTIFIER_RE = "[a-zA-Z_][a-zA-Z0-9_]*";
+  const QUOTED_IDENTIFIER_RE = /`[^`]+`/;
 
   /** @type Mode */
   const NORMAL_IDENTIFIER = {
@@ -110,8 +111,7 @@ export default function (hljs) {
   /** @type Mode */
   const QUOTED_IDENTIFIER = {
     className: "title",
-    begin: /`/,
-    end: /`/,
+    begin: QUOTED_IDENTIFIER_RE,
   };
 
   /** @type Mode */
@@ -318,18 +318,38 @@ export default function (hljs) {
 
   /** @type Mode */
   const PROPERTY_ACCESS = {
-    match: [/\.|\?\./, /\s*/, /[a-zA-Z_][a-zA-Z0-9_]*/],
-    scope: {
-      3: "property",
-    },
+    variants: [
+      {
+        match: [/\.|\?\./, /\s*/, QUOTED_IDENTIFIER_RE],
+        scope: {
+          3: "property",
+        },
+      },
+      {
+        match: [/\.|\?\./, /\s*/, IDENTIFIER_RE],
+        scope: {
+          3: "property",
+        },
+      },
+    ],
   };
 
   /** @type Mode */
   const OBJECT_PROPERTY = {
-    match: [/[a-zA-Z_][a-zA-Z0-9_]*/, /\s*/, /(?=[=:{])/],
-    scope: {
-      1: "property",
-    },
+    variants: [
+      {
+        match: [QUOTED_IDENTIFIER_RE, /\s*/, /(?=[=:{])/],
+        scope: {
+          1: "property",
+        },
+      },
+      {
+        match: [IDENTIFIER_RE, /\s*/, /(?=[=:{])/],
+        scope: {
+          1: "property",
+        },
+      },
+    ],
   };
 
   return {

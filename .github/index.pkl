@@ -93,6 +93,7 @@ release {
         contents = "write"
         `id-token` = "write"
       }
+      environment = "npmjs"
       steps {
         ...buildAndTest.jobs["build-and-test"].steps
         new {

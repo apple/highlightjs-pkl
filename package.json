@@ -4,6 +4,9 @@
   "description": "Pkl syntax highlighter for highlightjs",
   "main": "src/languages/pkl.js",
   "types": "types/index.d.ts",
+  "repository": {
+    "url": "https://github.com/apple/highlightjs-pkl"
+  },
   "directories": {
     "test": "test"
   },

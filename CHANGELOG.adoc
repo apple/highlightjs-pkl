@@ -1,0 +1,23 @@
+= CHANGELOG
+
+[[release-1.0.1]]
+== 1.0.1 (2025-12-16)
+
+=== Fixes
+
+* Fixes syntax highlighting of quoted identifiers in properties (https://github.com/apple/highlightjs-pkl/pull/5[#5]).
+
+=== Changes
+
+* Change README.adoc to README.md (https://github.com/apple/highlightjs-pkl/pull/4[#4]).
+
+=== Contributors ❤️
+
+Thank you to all the contributors for this release!
+
+* https://github.com/bioball[@bioball]
+
+[[release-1.0.0]]
+== 1.0.0 (2025-12-15)
+
+Initial library release.

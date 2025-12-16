@@ -38,3 +38,14 @@ jobs:
     - run: git diff --name-only --exit-code || echo "Some files were incorrectly formatted!"
     - name: Publish to npm
       run: npm publish
+    - name: gh release
+      env:
+        GIT_TAG: ${{ github.ref_name }}
+        GIT_SHA: ${{ github.sha }}
+        GH_TOKEN: ${{ github.token }}
+      run: |-
+        gh release create "${GIT_TAG}" \
+          --title "${GIT_TAG}" \
+          --target "${GIT_SHA}" \
+          --verify-tag \
+          --notes "Release notes: https://github.com/apple/highlightjs-pkl/blob/main/CHANGELOG.adoc#release-${GIT_TAG}"

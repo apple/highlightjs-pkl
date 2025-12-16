@@ -1,6 +1,6 @@
 {
   "name": "@apple/highlightjs-pkl",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Pkl syntax highlighter for highlightjs",
   "main": "src/languages/pkl.js",
   "types": "types/index.d.ts",

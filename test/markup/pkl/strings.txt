@@ -17,3 +17,10 @@ nested = """
   Result: \(if (age > 18) "Adult" else "Minor")
   Complex: \(new { x = 1; y = 2 }.x + new { x = 3 }.x)
   """
+
+continuation = ##"""
+  foo \
+  bar \#
+  baz \##
+  qux
+  """##

@@ -121,3 +121,15 @@ release {
     }
   }
 }
+
+dependabot {
+  updates {
+    new {
+      `package-ecosystem` = "npm"
+      directory = "/"
+      cooldown {
+        `default-days` = 7
+      }
+    }
+  }
+}

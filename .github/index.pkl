@@ -128,7 +128,7 @@ dependabot {
       `package-ecosystem` = "npm"
       directory = "/"
       schedule {
-        interval = "weekly"
+        interval = "quarterly"
       }
       cooldown {
         `default-days` = 7

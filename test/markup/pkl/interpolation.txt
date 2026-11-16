@@ -1,0 +1,13 @@
+simple = "Hello, \(name)!"
+nested = "Hello, \(name.substring(0, 2))!"
+deep = "Hello, \((name.substring(0, 2)))!"
+quotes = "Hello, \(if (true) "Dodo" else "D")!"
+block = "Hello, \(name /* ) */)!"
+quotedIdentifier = "Hello, \(`)`)!"
+recursive = "Hello, \("inner \(name)")!"
+rawHash = #"Hello, \#(name.substring(0, 2))!"#
+rawHashHash = ##"Hello, \##(name.substring(0, 2))!"##
+rawHashHashHash = ###"Hello, \###(name.substring(0, 2))!"###
+multiline = """
+Hello, \(name.substring(0, 2))!
+"""

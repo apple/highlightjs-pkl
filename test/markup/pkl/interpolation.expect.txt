@@ -1,0 +1,13 @@
+<span class="hljs-property">simple</span> = <span class="hljs-string">&quot;Hello, <span class="hljs-subst">\(name)</span>!&quot;</span>
+<span class="hljs-property">nested</span> = <span class="hljs-string">&quot;Hello, <span class="hljs-subst">\(name.substring(0, 2))</span>!&quot;</span>
+<span class="hljs-property">deep</span> = <span class="hljs-string">&quot;Hello, <span class="hljs-subst">\((name.substring(0, 2)))</span>!&quot;</span>
+<span class="hljs-property">quotes</span> = <span class="hljs-string">&quot;Hello, <span class="hljs-subst">\(if (true) <span class="hljs-string">&quot;Dodo&quot;</span> else <span class="hljs-string">&quot;D&quot;</span>)</span>!&quot;</span>
+<span class="hljs-property">block</span> = <span class="hljs-string">&quot;Hello, <span class="hljs-subst">\(name <span class="hljs-comment">/* ) */</span>)</span>!&quot;</span>
+<span class="hljs-property">quotedIdentifier</span> = <span class="hljs-string">&quot;Hello, <span class="hljs-subst">\(`)`)</span>!&quot;</span>
+<span class="hljs-property">recursive</span> = <span class="hljs-string">&quot;Hello, <span class="hljs-subst">\(<span class="hljs-string">&quot;inner <span class="hljs-subst">\(name)</span>&quot;</span>)</span>!&quot;</span>
+<span class="hljs-property">rawHash</span> = <span class="hljs-string">#&quot;Hello, <span class="hljs-subst">\#(name.substring(0, 2))</span>!&quot;#</span>
+<span class="hljs-property">rawHashHash</span> = <span class="hljs-string">##&quot;Hello, <span class="hljs-subst">\##(name.substring(0, 2))</span>!&quot;##</span>
+<span class="hljs-property">rawHashHashHash</span> = <span class="hljs-string">###&quot;Hello, <span class="hljs-subst">\###(name.substring(0, 2))</span>!&quot;###</span>
+<span class="hljs-property">multiline</span> = <span class="hljs-string">&quot;&quot;&quot;
+Hello, <span class="hljs-subst">\(name.substring(0, 2))</span>!
+&quot;&quot;&quot;</span>

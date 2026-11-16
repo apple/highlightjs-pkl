@@ -161,9 +161,23 @@ export default function (hljs) {
     match: concat(/\\/, rawDelimiter, /\r?\n/),
   });
 
+  const interpolationContents = [
+    hljs.C_LINE_COMMENT_MODE,
+    hljs.C_BLOCK_COMMENT_MODE,
+    { begin: QUOTED_IDENTIFIER_RE },
+  ];
+
+  const interpolationParens = {
+    begin: /\(/,
+    end: /\)/,
+    contains: ["self", ...interpolationContents],
+  };
+  interpolationContents.push(interpolationParens);
+
   const interpolation = (rawDelimiter = "") => ({
     className: "subst",
     label: "interpol",
+    contains: interpolationContents,
     begin: concat(/\\/, rawDelimiter, /\(/),
     end: /\)/,
   });
@@ -204,6 +218,10 @@ export default function (hljs) {
       singleLineString("###"),
     ],
   };
+
+  // Strings inside expressions may themselves contain interpolations.
+  interpolationContents.push(STRING);
+  interpolationParens.contains.push(STRING);
 
   /** @type Mode */
   const STRING_CONSTANT = {

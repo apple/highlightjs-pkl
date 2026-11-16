@@ -1,5 +1,23 @@
 = CHANGELOG
 
+[[release-1.0.2]]
+== 1.0.2 (2026-11-16)
+
+=== Fixes
+
+* Fixes syntax highlighting of nested parentheses inside string interpolation (https://github.com/apple/highlightjs-pkl/pull/68[#68]).
+
+=== Additions
+
+* Add support for multiline string continuations (https://github.com/apple/highlightjs-pkl/pull/17[#17]).
+
+=== Contributors ❤️
+
+Thank you to all the contributors for this release!
+
+* https://github.com/HT154[@HT154]
+* https://github.com/shobhit26-09[@shobhit26-09]
+
 [[release-1.0.1]]
 == 1.0.1 (2025-12-16)
 

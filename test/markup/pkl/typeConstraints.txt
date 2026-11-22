@@ -1,0 +1,5 @@
+name: String = "before"
+minPklVersion: String(matches(Regex(#"\d{1,2}\.\d{1,2}\.\d{1,2}"#)))
+build: String(matches(Regex(#"[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*"#)))?
+mode: "a,b" | "c=d" = "c=d"
+name2: String = "after"

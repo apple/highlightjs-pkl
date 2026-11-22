@@ -337,7 +337,8 @@ export default function (hljs) {
         className: "type",
         begin: IDENTIFIER_RE,
       },
-
+      // strings in type constraints, e.g. `String(matches(Regex(#"\d{1,2}"#)))`
+      STRING,
       hljs.C_LINE_COMMENT_MODE,
       hljs.C_BLOCK_COMMENT_MODE,
     ],

@@ -1,0 +1,5 @@
+<span class="hljs-property">name</span>: <span class="hljs-type"><span class="hljs-type">String</span> </span>= <span class="hljs-string">&quot;before&quot;</span>
+<span class="hljs-property">minPklVersion</span>: <span class="hljs-type"><span class="hljs-type">String</span>(<span class="hljs-type">matches</span>(<span class="hljs-type">Regex</span>(<span class="hljs-string">#&quot;\d{1,2}\.\d{1,2}\.\d{1,2}&quot;#</span></span>)))
+<span class="hljs-property">build</span>: <span class="hljs-type"><span class="hljs-type">String</span>(<span class="hljs-type">matches</span>(<span class="hljs-type">Regex</span>(<span class="hljs-string">#&quot;[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*&quot;#</span></span>)))?
+<span class="hljs-property">mode</span>: <span class="hljs-type"><span class="hljs-string">&quot;a,b&quot;</span> | <span class="hljs-string">&quot;c=d&quot;</span> </span>= <span class="hljs-string">&quot;c=d&quot;</span>
+<span class="hljs-property">name2</span>: <span class="hljs-type"><span class="hljs-type">String</span> </span>= <span class="hljs-string">&quot;after&quot;</span>
